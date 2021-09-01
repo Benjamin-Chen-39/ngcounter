@@ -9,11 +9,16 @@ export class Counter {
     this.buttonDisabled = false;
   }
   subtract() {
+    if (this.value === 1)
+    {this.buttonDisabled = true;
+    this.value -=1;  
+    }
+
     if (this.value === 0)
   {this.buttonDisabled = true;
-     return;
-    
+    return;
   }
   else {
   this.value -=1;}
+  this.buttonDisabled = false;
 }}

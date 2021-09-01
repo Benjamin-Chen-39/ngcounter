@@ -42,4 +42,14 @@ describe("CounterListComponent", () => {
     fixture.detectChanges();
     expect(component.counters.length).toEqual(3);
   });
+  it("every 3 counters create a super counter", () =>{
+    const ourHTML = fixture.nativeElement;
+    const createButton = fixture.nativeElement.querySelector("Button");
+    createButton.click();
+    createButton.click();
+    createButton.click();
+    createButton.click();
+    expect(component.SuperCounters.length).toEqual(1);
+    expect(component.counters.length).toEqual(0);
+  })
 });
