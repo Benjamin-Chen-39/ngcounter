@@ -1,4 +1,9 @@
 <p>counter-list works!</p>
 <button (click)="create()">Create</button>
-<div *ngFor="let counter of counters"><app-app-counter></app-app-counter></div>
 
+<div *ngFor="let counter of counters">counter</div>
+
+<div *ngFor="let superCounter of SuperCounters">
+  <h3>value is:{{ superCounter.value }}</h3>
+  <app-super-counter [value]="superCounter.value"></app-super-counter>
+</div>
