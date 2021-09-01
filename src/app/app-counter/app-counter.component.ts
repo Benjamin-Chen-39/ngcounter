@@ -8,8 +8,7 @@ import { Counter } from "../counter-list/counter";
 })
 export class AppCounterComponent implements OnInit {
   public ourCounter: Counter = new Counter();
-  
   constructor() {}
-
+ 
   ngOnInit(): void {}
 }

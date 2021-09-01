@@ -33,12 +33,17 @@ describe("AppCounterComponent", () => {
     expect(el.textContent).toEqual("1");
   });
 
-  it("subtract button should increase counter value", () => {
+  it("subtract button should decrease counter value", () => {
     const ourHTML = fixture.nativeElement;
     const subButtonEl = fixture.nativeElement.querySelector("#subButton");
     const el = ourHTML.querySelector("h3");
     subButtonEl.click();
     fixture.detectChanges();
-    expect(el.textContent).toEqual("-1");
+    expect(el.textContent).toEqual("0");
   });
+  it ('disable button when equal to zero', () =>{
+    const ourHTML = fixture.nativeElement;
+    const subButtonEl = fixture.nativeElement.querySelector("#subButton");
+    expect(subButtonEl.disabled).toEqual(true);
+    });
 });
