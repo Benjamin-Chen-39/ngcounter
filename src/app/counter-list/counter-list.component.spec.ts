@@ -28,8 +28,18 @@ describe("CounterListComponent", () => {
     expect(component.counters.length).toEqual(0);
   });
 
-  it("should expect create function to push a new counter", () => {
+  it("should expect create function to create a new counter", () => {
     component.create();
     expect(component.counters.length).toEqual(1);
+  });
+
+  it("should expect click button to create new counters", () => {
+    const ourHTML = fixture.nativeElement;
+    const createButton = fixture.nativeElement.querySelector("Button");
+    createButton.click();
+    createButton.click();
+    createButton.click();
+    fixture.detectChanges();
+    expect(component.counters.length).toEqual(3);
   });
 });

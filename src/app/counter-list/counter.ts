@@ -3,10 +3,10 @@ import { Button } from "protractor";
 export class Counter {
   public value: number = 0;
 
-  increment() {
+  add() {
     this.value += 1;
   }
-  decrement() {
+  subtract() {
     this.value -= 1;
   }
 }

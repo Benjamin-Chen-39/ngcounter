@@ -16,14 +16,14 @@ describe("Counter", () => {
   });
 
   it("should increment by one", () => {
-    myCounter.increment();
+    myCounter.add();
     expect(myCounter.value).toEqual(1);
   });
 
   it("should decrement by one", () => {
-    myCounter.increment();
-    myCounter.increment();
-    myCounter.decrement();
+    myCounter.add();
+    myCounter.add();
+    myCounter.subtract();
     expect(myCounter.value).toEqual(1);
   });
 });

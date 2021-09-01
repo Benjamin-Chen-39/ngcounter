@@ -11,7 +11,9 @@ export class CounterListComponent implements OnInit {
   public counters: Counter[] = [];
 
   public create() {
-    this.counters.push(new Counter());
+    this.counters.push(new Counter);
+
+    
   }
 
   constructor() {}

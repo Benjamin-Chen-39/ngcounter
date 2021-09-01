@@ -1,16 +1,14 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { AppCounterComponent } from "./app-counter.component";
 
-import { AppCounterComponent } from './app-counter.component';
-
-describe('AppCounterComponent', () => {
+describe("AppCounterComponent", () => {
   let component: AppCounterComponent;
   let fixture: ComponentFixture<AppCounterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AppCounterComponent ]
-    })
-    .compileComponents();
+      declarations: [AppCounterComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +17,28 @@ describe('AppCounterComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
+  });
+  it("should have a counter class", () => {
+    expect(component.ourCounter.value).toEqual(0);
+  });
+
+  it("add button should increase counter value", () => {
+    const ourHTML = fixture.nativeElement;
+    const addButtonEl = fixture.nativeElement.querySelector("#addButton");
+    const el = ourHTML.querySelector("h3");
+    addButtonEl.click();
+    fixture.detectChanges();
+    expect(el.textContent).toEqual("1");
+  });
+
+  it("subtract button should increase counter value", () => {
+    const ourHTML = fixture.nativeElement;
+    const subButtonEl = fixture.nativeElement.querySelector("#subButton");
+    const el = ourHTML.querySelector("h3");
+    subButtonEl.click();
+    fixture.detectChanges();
+    expect(el.textContent).toEqual("-1");
   });
 });
